@@ -49,8 +49,8 @@ export default function Home() {
         images used in this project. All rights belong to their respective
         owners. I do not own or affiliated with Dropbox in any way. This is a
         clone of the Dropbox website. Copyright disclaimer under section 107 of
-        Copyright Act. 1976, allowance is made for "fair use" of this website
-        for education purposes.
+        Copyright Act. 1976, allowance is made for fair use of this website for
+        education purposes.
       </p>
     </main>
   );
