@@ -10,6 +10,7 @@ import { db, storage } from "@/firebase";
 import { doc } from "@firebase/firestore";
 import { ref } from "@firebase/storage";
 import { updateDoc } from "firebase/firestore";
+import toast from "react-hot-toast";
 
 function RenameModal() {
   const { user } = useUser();
@@ -26,19 +27,19 @@ function RenameModal() {
   const renameFile = async () => {
     if (!user || !fileId) return;
 
-    const fileRef = ref(storage, `users/${user.id}/files/${fileId}`);
+    const toastId = toast.loading("Renaming file...");
 
     try {
       await updateDoc(doc(db, "users", user.id, "files", fileId), {
         filename: input,
       }).then(() => {
-        console.log("Document successfully updated!");
+        toast.success("Renamed successfully!", { id: toastId });
+        setInput("");
+        setIsRenameModalOpen(false);
       });
     } catch (error) {
-      console.log(error);
-    } finally {
-      setInput("");
-      setIsRenameModalOpen(false);
+      console.error(error);
+      toast.error("Something went wrong!");
     }
   };
 
