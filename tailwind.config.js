@@ -16,6 +16,9 @@ module.exports = {
       }
     },
     extend: {
+      fontFamily: {
+        basefont: ['CascadiaMono', 'Consolas', 'monospace']
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

@@ -85,9 +85,9 @@ function Dropzone() {
                 )}
                 {isDragActive && !isDragReject && 'Drop to upload this file!'}
                 {isDragReject && (
-                  <p className='text-red-500 mt-2'>File type not accepted, sorry!</p>
+                  <p className='text-destructive mt-2'>File type not accepted, sorry!</p>
                 )}
-                {isFileTooLarge && <p className='text-red-500 mt-2'>File is too large!</p>}
+                {isFileTooLarge && <p className='text-destructive mt-2'>File is too large!</p>}
               </div>
             </div>
           </section>

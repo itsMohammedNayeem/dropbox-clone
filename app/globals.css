@@ -74,3 +74,13 @@
     @apply bg-background text-foreground;
   }
 }
+@layer base {
+  @font-face {
+    font-family: 'CascadiaMono';
+    src: local('CascadiaMono'), url('../public/fonts/CascadiaMono.woff2') format('woff2');
+  }
+
+  html {
+    font-family: 'CascadiaMono', monospace;
+  }
+}
