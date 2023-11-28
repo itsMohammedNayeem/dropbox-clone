@@ -76,15 +76,19 @@ function Dropzone() {
                   : 'bg-slate-100/50 dark:bg-slate-800/80 text-slate-400'
               )}>
               <input {...getInputProps()} />
-              {!isDragActive && (
-                <div className='flex flex-col items-center space-y-4 hover:cursor-pointer'>
-                  <PlusCircle className='w-8 h-8 text-[#318D2A]' />
-                  <p className='text-lg font-light'>Click here or drop a file to upload!</p>
-                </div>
-              )}
-              {isDragActive && !isDragReject && 'Drop to upload this file!'}
-              {isDragReject && 'File type not accepted, sorry!'}
-              {isFileTooLarge && <div className='text-danger mt-2'>File is too large.</div>}
+              <div className='flex flex-col items-center space-y-4 hover:cursor-pointer'>
+                {!isDragActive && (
+                  <>
+                    <PlusCircle className='w-8 h-8 text-[#318D2A]' />
+                    <p className='text-lg font-light'>Click here or drop a file to upload!</p>
+                  </>
+                )}
+                {isDragActive && !isDragReject && 'Drop to upload this file!'}
+                {isDragReject && (
+                  <p className='text-red-500 mt-2'>File type not accepted, sorry!</p>
+                )}
+                {isFileTooLarge && <p className='text-red-500 mt-2'>File is too large!</p>}
+              </div>
             </div>
           </section>
         )
