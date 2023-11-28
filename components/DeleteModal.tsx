@@ -14,6 +14,7 @@ import { db, storage } from "@/firebase";
 import { ref, deleteObject } from "@firebase/storage";
 import { doc } from "@firebase/firestore";
 import { deleteDoc } from "firebase/firestore";
+import toast from "react-hot-toast";
 
 export function DeleteModal() {
   const { user } = useUser();
@@ -28,6 +29,7 @@ export function DeleteModal() {
   async function deleteFile() {
     if (!user || !fileId) return;
 
+    const toastId = toast.loading("Deleting file...");
     const fileRef = ref(storage, `users/${user.id}/files/${fileId}`);
 
     try {
@@ -35,7 +37,7 @@ export function DeleteModal() {
         .then(async () => {
           await deleteDoc(doc(db, "users", user.id, "files", fileId)).then(
             () => {
-              console.log("Document successfully deleted!");
+              toast.success("Deleted successfully!", { id: toastId });
             }
           );
         })
@@ -43,8 +45,9 @@ export function DeleteModal() {
           setIsDeleteModalOpen(false);
         });
     } catch (error) {
+      toast.error("Something went wrong!");
       setIsDeleteModalOpen(false);
-      console.log(error);
+      console.error(error);
     }
   }
 
