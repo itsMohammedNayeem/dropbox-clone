@@ -14,8 +14,6 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Screenshot 2023-12-08 at 2 47 47 PM](https://github.com/itsMohammedNayeem/dropbox-clone/assets/127741549/28ab4dc3-0246-478a-bbb4-d2c2274d8e9e)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![Screenshot 2023-12-08 at 2 48 13 PM](https://github.com/itsMohammedNayeem/dropbox-clone/assets/127741549/8f2e6a95-b9fd-4648-be66-093bf3c3e8b0)
